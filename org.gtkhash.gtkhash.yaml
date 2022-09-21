@@ -1,6 +1,6 @@
 app-id: org.gtkhash.gtkhash
 runtime: org.freedesktop.Platform
-runtime-version: '21.08'
+runtime-version: '22.08'
 sdk: org.freedesktop.Sdk
 command: gtkhash
 
@@ -14,13 +14,11 @@ finish-args:
   - --filesystem=host
 
 modules:
-  - shared-modules/intltool/intltool-0.51.json
-
   - name: gtkhash
     sources:
       - type: archive
-        url: https://github.com/tristanheaven/gtkhash/releases/download/v1.4/gtkhash-1.4.tar.xz
-        sha256: 20b57dbb8f6c6d7323f573c111a11640603a422c5f9da7b302a4981e4adc37c4
+        url: https://github.com/tristanheaven/gtkhash/releases/download/v1.5/gtkhash-1.5.tar.xz
+        sha256: 7102a192eca3e82ed67a8252a6850440e50c1dbea7c6364bda154ec80f8ff005
     buildsystem: autotools
     config-opts:
       - --enable-gcrypt
