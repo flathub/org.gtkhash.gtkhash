@@ -1,6 +1,6 @@
 app-id: org.gtkhash.gtkhash
 runtime: org.freedesktop.Platform
-runtime-version: '22.08'
+runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
 command: gtkhash
 
@@ -19,10 +19,8 @@ modules:
       - type: archive
         url: https://github.com/tristanheaven/gtkhash/releases/download/v1.5/gtkhash-1.5.tar.xz
         sha256: 7102a192eca3e82ed67a8252a6850440e50c1dbea7c6364bda154ec80f8ff005
-    buildsystem: autotools
+    buildsystem: meson
     config-opts:
-      - --enable-gcrypt
-      - --disable-blake2
-      - --disable-dependency-tracking
-      - --disable-native-file-chooser # https://github.com/flatpak/xdg-desktop-portal/issues/463
-      - --disable-silent-rules
+      - -Dgcrypt=true
+      - -Dblake2=false
+      - -Dnative-file-chooser=false # https://github.com/flatpak/xdg-desktop-portal/issues/463
