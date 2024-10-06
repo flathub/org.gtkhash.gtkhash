@@ -24,3 +24,6 @@ modules:
       - -Dgcrypt=true
       - -Dblake2=false
       - -Dnative-file-chooser=false # https://github.com/flatpak/xdg-desktop-portal/issues/463
+    post-install:
+      # meson should probably be doing this
+      - glib-compile-schemas --strict /app/share/glib-2.0/schemas
